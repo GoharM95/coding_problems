@@ -39,7 +39,6 @@ function getVowelsCount(str) {
         break;
       case "o":
         vowelsCount++;
-        break;
     }
   }
   return vowelsCount;
