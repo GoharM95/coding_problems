@@ -21,3 +21,15 @@ function longestWords(str) {
 }
 
 console.log(longestWords("Hello my crazy buddy"));
+
+// with reduce and filter
+function longestWords(str) {
+  const strArr = str.split(" ");
+  const max = strArr.reduce((acc, currWord) => {
+    acc < currWord.length ? (acc = currWord.length) : acc;
+    return acc;
+  }, 0);
+  return strArr.filter((word) => word.length === max);
+}
+
+console.log(longestWords("Hello my crazy buddy"));
