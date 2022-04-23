@@ -3,7 +3,6 @@
 function arraySum(arr) {
   const sortedArr = arr.sort((a, b) => a - b);
   const max = sortedArr.pop();
-  console.log(sortedArr);
   const sum = sortedArr.reduce((acc, elem) => acc + elem, 0);
   return sum === max;
 }
