@@ -1,5 +1,5 @@
-// return first word with greates number of repeated letters
-function countLetters(str) {
+// return first word with greatest number of repeated letters
+function firstWordWithMaxRepeatedLetters(str) {
   let tempArr = str.split(" ");
 
   tempArr = tempArr.map((item) => {
@@ -32,4 +32,8 @@ function countLetters(str) {
   return -1;
 }
 
-console.log(countLetters("Javascript is the greatest programming languageee"));
+console.log(
+  firstWordWithMaxRepeatedLetters(
+    "Javascript is the greatest programming languageee"
+  )
+);
