@@ -30,7 +30,6 @@ const rightDirObj = {
 
 function getTime(str) {
   let minTime = 0;
-  let step;
   const rightDirObjLength = Object.keys(rightDirObj).length;
 
   for (let i = 0; i < str.length; i++) {
@@ -39,10 +38,9 @@ function getTime(str) {
     let arc1 = Math.abs(rightDirObj[currChar] - rightDirObj[prevChar]);
     let arc2 = rightDirObjLength - arc1;
 
+    let step = arc1;
     if (arc2 < arc1) {
       step = arc2;
-    } else {
-      step = arc1;
     }
     minTime += step;
   }
@@ -58,9 +56,10 @@ function maxTrailing(arr) {
 
   for (let pointer2 = 1; pointer2 < arr.length; pointer2++) {
     let pointer1 = 0;
+    const currElem = arr[pointer2];
+
     while (pointer1 < pointer2) {
       const prevElem = arr[pointer1];
-      const currElem = arr[pointer2];
       const currDiff = currElem - prevElem;
       maxDiff = maxDiff < currDiff ? currDiff : maxDiff;
       pointer1++;
